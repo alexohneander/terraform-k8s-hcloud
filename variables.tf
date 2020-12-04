@@ -24,17 +24,17 @@ variable "node_image" {
 
 variable "node_type" {
   description = "For more types have a look at https://www.hetzner.de/cloud"
-  default     = "cx21"
+  default     = "cx11"
 }
 
 variable "ssh_private_key" {
   description = "Private Key to access the machines"
-  default     = "~/.ssh/id_ed25519"
+  default     = "~/.ssh/hetzner"
 }
 
 variable "ssh_public_key" {
   description = "Public Key to authorized the access for the machines"
-  default     = "~/.ssh/id_ed25519.pub"
+  default     = "~/.ssh/hetzner.pub"
 }
 
 variable "docker_version" {
@@ -51,6 +51,10 @@ variable "feature_gates" {
 }
 
 variable "calico_enabled" {
+  default = false
+}
+
+variable "metalb_enabled" {
   default = false
 }
 
