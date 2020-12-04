@@ -116,3 +116,9 @@ resource "hcloud_server" "node" {
   }
 }
 
+resource "hcloud_volume" "ceph-storage" {
+  name = "ceph-storage"
+  size = 50
+  server_id = hcloud_server.master.id
+  automount = true
+}
